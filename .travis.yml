@@ -15,8 +15,8 @@ install:
   - sudo apt-get install -qq qt5-qmake qt5-default
 
 script: 
- - ./install_urho3d.sh
- - ln -s ./Urho3D/bin/Data
- - ln -s ./Urho3D/bin/CoreData
+ - ./install_urho3d
+ - ln -s ../Urho3D/bin/Data
+ - ln -s ../Urho3D/bin/CoreData
  - qmake -qt=qt5 travis_qmake_gcc_cpp11_urho3d.pro
  - make --silent
