@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mastercontrol.h"
+#include <Urho3D/Urho3D.h>
 
 namespace Urho3D {
   class Drawable;
@@ -17,7 +18,7 @@ using namespace Urho3D;
 
 class CameraMaster : public Object
 {
-    OBJECT(CameraMaster);
+    URHO3D_OBJECT(CameraMaster, Object);
     friend class MasterControl;
     friend class InputMaster;
 public:

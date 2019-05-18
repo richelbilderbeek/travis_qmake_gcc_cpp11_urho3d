@@ -1,15 +1,8 @@
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Weffc++"
-#pragma GCC diagnostic ignored "-Wunused-parameter"
-#pragma GCC diagnostic ignored "-Wunused-variable"
-#pragma GCC diagnostic ignored "-Wstrict-aliasing"
-#define BT_INFINITY
 #include <Urho3D/Urho3D.h>
 #include <Urho3D/Scene/Node.h>
 #include <Urho3D/Graphics/Graphics.h>
 #include <Urho3D/Graphics/OctreeQuery.h>
 #include <Urho3D/IO/FileSystem.h>
-#pragma GCC diagnostic pop
 
 #include "inputmaster.h"
 #include "cameramaster.h"
@@ -21,8 +14,8 @@ InputMaster::InputMaster(
   : Object(context),
     masterControl_{masterControl}
 {
-  SubscribeToEvent(E_MOUSEBUTTONDOWN, HANDLER(InputMaster, HandleMouseDown));
-  SubscribeToEvent(E_KEYDOWN, HANDLER(InputMaster, HandleKeyDown));
+  SubscribeToEvent(E_MOUSEBUTTONDOWN, URHO3D_HANDLER(InputMaster, HandleMouseDown));
+  SubscribeToEvent(E_KEYDOWN, URHO3D_HANDLER(InputMaster, HandleKeyDown));
 }
 
 void InputMaster::HandleMouseDown(
@@ -48,7 +41,7 @@ void InputMaster::HandleKeyDown(
   const int key = eventData[P_KEY].GetInt();
 
   //Exit when ESC is pressed
-  if (key == KEY_ESC)
+  if (key == KEY_ESCAPE)
   {
     masterControl_->Exit();
   }

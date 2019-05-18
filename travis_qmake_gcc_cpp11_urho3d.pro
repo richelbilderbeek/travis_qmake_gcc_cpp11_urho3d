@@ -1,5 +1,12 @@
-QMAKE_CXXFLAGS += -Wall -Wextra -Werror -std=c++11
+QMAKE_CXXFLAGS += -Wall -Wextra
+QMAKE_CXXFLAGS += -Wno-unused-variable
+QMAKE_CXXFLAGS += -Wno-unused-parameter
+
+QMAKE_CXXFLAGS += -std=c++11
 CONFIG += c++11
+
+# There will be warnings :-(
+# QMAKE_CXXFLAGS += -Werror
 
 SOURCES += \
     mastercontrol.cpp \
@@ -11,15 +18,14 @@ HEADERS += \
     inputmaster.h \
     cameramaster.h
 
-QMAKE_CXXFLAGS += -Wno-unused-variable
 
 # Urho3D
 INCLUDEPATH += \
-    ../travis_qmake_gcc_cpp11_urho3d/Urho3D/include \
-    ../travis_qmake_gcc_cpp11_urho3d/Urho3D/include/Urho3D/ThirdParty
+    ../Urho3D/include \
+    ../Urho3D/include/Urho3D/ThirdParty
 
 LIBS += \
-    ../travis_qmake_gcc_cpp11_urho3d/Urho3D/lib/libUrho3D.a
+    ../Urho3D/lib/libUrho3D.a
 
 LIBS += \
     -lpthread \
