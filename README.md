@@ -1,6 +1,6 @@
 # travis_qmake_gcc_cpp11_urho3d
 
-[![Travis CI logo](TravisCI.png)](https://travis-ci.org)
+[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)
 
 [![Build Status](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp11_urho3d.svg?branch=master)](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp11_urho3d)
 
